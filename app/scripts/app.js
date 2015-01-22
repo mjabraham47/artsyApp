@@ -21,7 +21,6 @@ angular.module('ArtsyApp', ['ionic', 'config', 'ArtsyApp.controllers'])
     }
   });
 })
-
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
