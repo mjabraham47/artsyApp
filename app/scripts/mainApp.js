@@ -1,6 +1,5 @@
 'use strict';
-angular.module('ArtsyApp.controllers', [])
-
+var app = angular.module('ArtsyApp.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
   // Form data for the login modal
   $scope.loginData = {};
@@ -33,17 +32,3 @@ angular.module('ArtsyApp.controllers', [])
     }, 1000);
   }
 })
-
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
-})
-
-.controller('PlaylistCtrl', function($scope, $stateParams) {
-});

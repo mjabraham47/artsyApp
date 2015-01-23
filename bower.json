@@ -3,8 +3,10 @@
   "version": "0.0.0",
   "dependencies": {
     "ionic": "v1.0.0-beta.13",
+    "ionic-contrib-tinder-cards": "*"
     "firebase": "~2.1.1",
     "angularfire": "~0.9.1"
+
   },
   "devDependencies": {
     "angular-mocks": "~1.2.17",
