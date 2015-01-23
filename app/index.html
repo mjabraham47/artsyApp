@@ -30,12 +30,12 @@
               on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)"
               on-partial-swipe="cardPartialSwipe(amt)">
                   <div class="title">
-                      {{card.title}}
+                      {{card.title}}<br> <br>{{something}}
                   </div>
                   <div class="image">
-                      <div class="no-text overlayBox"><div class="noBox boxed">Trash</div></div>
+                      <div class="no-text overlayBox"><div class="noBox boxed">Nooooo</div></div>
                       <img ng-src="{{card.image}}">
-                      <div class="yes-text overlayBox"><div class="yesBox boxed" id="centerMe">Save</div></div>
+                      <div class="yes-text overlayBox"><div class="yesBox boxed" id="centerMe">Yaaaay</div></div>
                   </div>
               </td-card>
           </td-cards>
@@ -61,10 +61,7 @@
         <script src="scripts/config.js"></script>
         <script src="scripts/app.js"></script>
         <script src="scripts/mainApp.js"></script>
-
-<!--         <script src="scripts/playlists.js"></script>
-        <script src="scripts/playlist.js"></script> -->
-        <!-- <script src="scripts/ionic.swipecards.js"></script> -->
+        <script src="scripts/cards.js"></script>
         <script src="lib/collide/collide.js"></script>
         <script src="lib/ionic-contrib-tinder-cards/ionic.tdcards.js"></script>
 
