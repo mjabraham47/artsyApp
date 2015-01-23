@@ -13,7 +13,11 @@ app
 .controller('CardsCtrl', function($scope, $http) {
     var cardTypes;
     $scope.cards = [];
+    $scope.holdTheCards = [];
 
+       
+
+  
 
     $http.get('http://localhost:3000/artworks')
         .then(function(data){
@@ -47,13 +51,16 @@ app
 
  
     $scope.cardSwipedRight = function(index) {
+                console.log(index)
+
         $http.get('http://localhost:3000/related/' +$scope.cards[index].id)
             .then(function(data){
                 return data.data
             }).then(function(data){
-                for (var i=0; i<data._embedded.artworks.length; i++){
-                    $scope.cards.push(data._embedded.artworks[i])
-                }
+                $scope.holdTheCards = data;
+                $scope.cards = $scope.holdTheCards._embedded.artworks.concat($scope.cards) 
+                console.log($scope.cards); 
+                       
             })
         console.log('Cards:', $scope.cards.length)
     }
