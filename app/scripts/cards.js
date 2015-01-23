@@ -11,28 +11,42 @@ app
     }
 })
 .controller('CardsCtrl', function($scope, $http) {
-    var cardTypes = [
-        {  title: 'So much grass #hippster'},
-        {  title: 'Way too much Sand, right?'},
-        {  title: 'Beautiful sky from wherever'},
-    ];
- 
+    var cardTypes;
+    var usedCards = [];
+        //     {  title: 'So much grass #hippster'},
+    //     {  title: 'Way too much Sand, right?'},
+    //     {  title: 'Beautiful sky from wherever'},
+    // ];
+    
     $scope.cards = [];
- 
-    $scope.addCard = function(i) {
+
+    $http.get('http://localhost:3000/artworks')
+        .success(function(data){
+            cardTypes = data._embedded.artworks
+            for(var i = 0; i < cardTypes.length; i++) {
+                $scope.addCard();
+            }
+        })
+
+    $scope.addCard = function() {
         var newCard = cardTypes[Math.floor(Math.random() * cardTypes.length)];
         newCard.id = Math.random();
+        console.log(newCard)
         $scope.cards.push(angular.extend({}, newCard));
     }
- 
-    for(var i = 0; i < 3; i++) $scope.addCard();
- 
+
     $scope.cardSwipedLeft = function(index) {
         console.log('Left swipe');
     }
  
     $scope.cardSwipedRight = function(index) {
         console.log('Right swipe');
+        console.log($scope.cards[index].id)
+    $http.get('http://localhost:3000/related/' +$scope.cards[index].id)
+        .success(function(data){
+                console.log(data)
+            })
+
     }
  
     $scope.cardDestroyed = function(index) {
@@ -43,11 +57,7 @@ app
     // $http.get("http://localhost:3000", function(err,data) {
     //     console.log(err, data);
     // });
-    $http.get('http://localhost:3000')
-    .success(function(data){
-        $scope.something = data;
-        console.log(data)
-    })
+
 
 
 

@@ -22,7 +22,7 @@
   
     <ion-pane ng-controller="CardsCtrl">
           <ion-header-bar class="bar-calm">
-              <h1 class="title">Ionic Tinder Cards</h1>
+              <h1 class="title">Artsy Cards</h1>
           </ion-header-bar>
  
           <td-cards>
@@ -30,11 +30,11 @@
               on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)"
               on-partial-swipe="cardPartialSwipe(amt)">
                   <div class="title">
-                      {{card.title}}<br> <br>{{something}}
+                      <center>{{card.title}}</center>
                   </div>
                   <div class="image">
                       <div class="no-text overlayBox"><div class="noBox boxed">Nooooo</div></div>
-                      <img ng-src="{{card.image}}">
+                      <img ng-src="{{card._links.thumbnail.href}}">
                       <div class="yes-text overlayBox"><div class="yesBox boxed" id="centerMe">Yaaaay</div></div>
                   </div>
               </td-card>

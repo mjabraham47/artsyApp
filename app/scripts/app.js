@@ -47,15 +47,6 @@ angular.module('ArtsyApp', ['ionic', 'config', 'ArtsyApp.controllers'])
           templateUrl: 'templates/browse.html'
         }
       }
-    })    
-    .state('app.mainApp', {
-      url: '/index',
-      views: {
-        'menuContent' :{
-          templateUrl: 'templates/index.html',
-          controller: 'CardCtrl'
-        }
-      }
     });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/');

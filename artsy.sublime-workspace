@@ -1,0 +1,401 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"back",
+				"background-repeat"
+			],
+			[
+				"indexOf",
+				"indexOf(${0:searchElement})	Array"
+			],
+			[
+				"hand",
+				"handlerGroups  (variable)"
+			],
+			[
+				"reason",
+				"readyState	Document"
+			],
+			[
+				"key",
+				"keys(${0:Object})	Object"
+			],
+			[
+				"p",
+				"proto	Prototype"
+			],
+			[
+				"for",
+				"forEach"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"gi",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"PAckage",
+				"Preferences: Browse Packages"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Convert Case: Title Case"
+			]
+		],
+		"width": 521.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/BeardedApple/artsy/app",
+		"/Users/BeardedApple/artsy/test"
+	],
+	"file_history":
+	[
+		"/Users/BeardedApple/artsy/artsy.sublime-project",
+		"/Users/BeardedApple/artsy/app/lib/ionic-contrib-tinder-cards/README.md",
+		"/Users/BeardedApple/artsy/app/lib/ionic-contrib-tinder-cards/ionic.tdcards.js",
+		"/Users/BeardedApple/artsy/app/scripts/config.js",
+		"/Users/BeardedApple/artsy/app/scripts/cards.js",
+		"/Users/BeardedApple/artsy/app/scripts/mainApp.js",
+		"/Users/BeardedApple/artsy/app/scripts/app.js",
+		"/Users/BeardedApple/artsy/app/index.html",
+		"/Users/BeardedApple/artsy/app/styles/main.scss",
+		"/Users/BeardedApple/artsy/app/templates/playlist.html",
+		"/Users/BeardedApple/artsy/app/templates/playlists.html",
+		"/Users/BeardedApple/artsy/app/scripts/ionic.swipecards.js",
+		"/Users/BeardedApple/artsy/app/scripts/playlist.js",
+		"/Users/BeardedApple/artsy/app/scripts/playlists.js",
+		"/Users/BeardedApple/artsy/app/scripts/ionslide.js",
+		"/Users/BeardedApple/artsy/app/scripts/ionpager.js",
+		"/Users/BeardedApple/swipe-art/gulp_tasks/tasks/test.js",
+		"/Users/BeardedApple/Downloads/style.css",
+		"/Users/BeardedApple/potterBarn/client/app/account/signup/signup.html",
+		"/Users/BeardedApple/potterBarn/client/app/product/product.html",
+		"/Users/BeardedApple/potterBarn/client/app/account/login/login.html",
+		"/Users/BeardedApple/potterBarn/client/app/account/settings/settings.html",
+		"/Users/BeardedApple/potterBarn/client/app/category/category.controller.js",
+		"/Users/BeardedApple/potterBarn/client/app/category/category.html",
+		"/Users/BeardedApple/potterBarn/server/api/cart/cart.model.js",
+		"/Users/BeardedApple/potterBarn/client/app/product/product.controller.js",
+		"/Users/BeardedApple/potterBarn/server/api/product/index.js",
+		"/Users/BeardedApple/potterBarn/client/app/main/main.controller.js",
+		"/Users/BeardedApple/potterBarn/client/app/main/main.html",
+		"/Users/BeardedApple/potterBarn/client/app/admin/admin.controller.js",
+		"/Users/BeardedApple/potterBarn/client/favicon.ico",
+		"/Users/BeardedApple/potterBarn/client/index.html",
+		"/Users/BeardedApple/potterBarn/server/api/user/index.js",
+		"/Users/BeardedApple/potterBarn/server/api/user/user.controller.js",
+		"/Users/BeardedApple/potterBarn/client/app/admin/admin.html",
+		"/Users/BeardedApple/potterBarn/client/app/app.js",
+		"/Users/BeardedApple/potterBarn/client/app/admin/admin.scss",
+		"/Users/BeardedApple/potterBarn/client/app/cart/cart.controller.js",
+		"/Users/BeardedApple/potterBarn/server/api/user/user.model.js",
+		"/Users/BeardedApple/potterBarn/client/app/cart/cart.controller.spec.js",
+		"/Users/BeardedApple/potterBarn/client/app/cart/cart.scss",
+		"/Users/BeardedApple/potterBarn/client/app/cart/cart.html",
+		"/Users/BeardedApple/potterBarn/server/api/cart/cart.controller.js",
+		"/Users/BeardedApple/potterBarn/server/api/cart/index.js",
+		"/Users/BeardedApple/potterBarn/client/app/category/category.scss",
+		"/Users/BeardedApple/potterBarn/client/app/category/category.controller.spec.js",
+		"/Users/BeardedApple/potterBarn/server/config/seed.js",
+		"/Users/BeardedApple/potterBarn/client/app/account/settings/settings.controller.js",
+		"/Users/BeardedApple/potterBarn/client/app/product/product.scss",
+		"/Users/BeardedApple/potterBarn/server/api/category/category.model.js",
+		"/Users/BeardedApple/potterBarn/client/app/category/category.js",
+		"/Users/BeardedApple/potterBarn/client/components/navbar/navbar.html",
+		"/Users/BeardedApple/potterBarn/client/app/main/main.scss",
+		"/Users/BeardedApple/potterBarn/client/bower_components/bootstrap/dist/css/bootstrap.css",
+		"/Users/BeardedApple/potterBarn/client/scripts/custom.js",
+		"/Users/BeardedApple/potterBarn/client/app/app.scss",
+		"/Users/BeardedApple/potterBarn/.bowerrc",
+		"/Users/BeardedApple/potterBarn/bower.json",
+		"/Users/BeardedApple/potterBarn/Gruntfile.js",
+		"/Users/BeardedApple/potterBarn/server/api/product/product.controller.js",
+		"/Users/BeardedApple/potterBarn/client/app/product/product.js",
+		"/Users/BeardedApple/potterBarn/client/components/auth/auth.service.js",
+		"/Users/BeardedApple/Documents/poker.js",
+		"/Users/BeardedApple/potterBarn/server/api/product/product.model.js",
+		"/Users/BeardedApple/.bashrc",
+		"/Users/BeardedApple/potterBarn/client/app/main/main.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/client/app/testApp/testApp.controller.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/client/app/main/main.html",
+		"/Users/BeardedApple/Desktop/EdAppV2/client/app/main/main.controller.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/server/config/seed.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/server/config/environment/development.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/.git/COMMIT_EDITMSG",
+		"/Users/BeardedApple/Desktop/Jimmy/index.html",
+		"/Users/BeardedApple/Desktop/EdAppV2/,",
+		"/Users/BeardedApple/Desktop/dateManhattan/client/index.html",
+		"/Users/BeardedApple/Desktop/dateManhattan/client/app/account/signup/location.service.js",
+		"/Users/BeardedApple/Desktop/dateManhattan/client/app/account/signup/location/location.service.spec.js",
+		"/Users/BeardedApple/Desktop/showthebeard/untitled.html",
+		"/Users/BeardedApple/Desktop/showthebeard/index.html",
+		"/Users/BeardedApple/Desktop/EdAppV2/dist/server/api/results/results.controller.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/server/api/results/results.controller.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/server/api/results/results.model.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/server/api/results/index.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/client/app/account/signup/signup.controller.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/server/routes.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/server/api/user/user.model.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/client/app/testApp/testappscore.service.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/server/api/user/user.controller.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/dist/server/routes.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/client/app/testApp/testApp.html",
+		"/Users/BeardedApple/Desktop/EdAppV2/client/app/account/signup/signup.html",
+		"/Users/BeardedApple/Desktop/EdAppV2/server/config/environment/index.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/.git/MERGE_MSG",
+		"/Users/BeardedApple/Desktop/EdAppV2/client/app/testApp/testApp.controller.spec.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/client/app/account/settings/settings.controller.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/client/components/auth/user.service.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/client/components/auth/auth.service.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/client/app/account/login/login.controller.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/server/auth/index.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/client/app/main/main.scss",
+		"/Users/BeardedApple/Desktop/EdAppV2/client/app/main/main.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/server/api/user/user.model.spec.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/package.json",
+		"/Users/BeardedApple/Desktop/EdAppV2/Gruntfile.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/client/app/testApp/testApp.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/node_modules/body-parser/node_modules/iconv-lite/encodings/tables/gb18030-ranges.json",
+		"/Users/BeardedApple/Desktop/EdAppV2/node_modules/mongoose/node_modules/mpromise/test/promises.Aplus.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/client/app/home/home.html",
+		"/Users/BeardedApple/Desktop/EdAppV2/client/app/home/testApp/testApp.controller.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/client/app/home/testApp/testApp.html",
+		"/Users/BeardedApple/Desktop/EdAppV2/client/components/navbar/navbar.controller.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/client/components/navbar/navbar.html",
+		"/Users/BeardedApple/Desktop/EdAppV2/client/app/home/home.controller.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/client/app/home/testApp/testApp.controller.spec.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/home/testApp/testApp.controller.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/client/app/type_ahead/type_ahead.service.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/client/app/typingAhead/typingAhead.directive.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/client/app/admin/admin.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/client/app/main/typeahead.html",
+		"/Users/BeardedApple/Desktop/EdAppV2/client/app/account/account.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/client/app/app.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/client/app/admin/admin.html",
+		"/Users/BeardedApple/Desktop/EdAppV2/client/app/home/home.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/client/app/admin/admin.controller.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/server/app.js",
+		"/Users/BeardedApple/Desktop/EdAppV2/client/app/account/login/login.html",
+		"/Users/BeardedApple/Desktop/EdAppV2/server/api/thing/thing.model.js"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"trash",
+			"save",
+			"app.run",
+			"ModalCtrl",
+			"user/",
+			"user",
+			"404",
+			"user 404",
+			"404",
+			"user AND 404",
+			"user 404",
+			"awesomeCart",
+			"typeahead-min-length",
+			"typeah",
+			"typeahead",
+			"collapse",
+			"fa",
+			"page-scroll",
+			"url",
+			"page-scroll",
+			"h2",
+			"background",
+			"intro",
+			"family",
+			"loggedIn",
+			"templateurl",
+			"product",
+			"save",
+			"get",
+			"resultss",
+			"populate",
+			"wired",
+			"seed: true",
+			"input",
+			"typeahead",
+			"typea",
+			"}\n",
+			"xit",
+			"tobe",
+			"false",
+			"falsey",
+			"xit",
+			"color"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"it"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.textarea":
+	{
+		"height": 100.0
+	},
+	"project": "artsy.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"grunt",
+				"Gruntfile.js"
+			],
+			[
+				"pack",
+				"package.json"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 272.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
