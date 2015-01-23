@@ -22,6 +22,8 @@ app
 
     $http.get('http://localhost:3000/artworks')
         .success(function(data){
+                    console.log(data)
+
             cardTypes = data._embedded.artworks
             for(var i = 0; i < cardTypes.length; i++) {
                 $scope.addCard();
@@ -30,8 +32,6 @@ app
 
     $scope.addCard = function() {
         var newCard = cardTypes[Math.floor(Math.random() * cardTypes.length)];
-        newCard.id = Math.random();
-        console.log(newCard)
         $scope.cards.push(angular.extend({}, newCard));
     }
 
@@ -41,10 +41,11 @@ app
  
     $scope.cardSwipedRight = function(index) {
         console.log('Right swipe');
-        console.log($scope.cards[index].id)
     $http.get('http://localhost:3000/related/' +$scope.cards[index].id)
         .success(function(data){
-                console.log(data)
+                for (var i=0; i<data._embedded.artworks.length; i++){
+                    $scope.cards.push(data._embedded.artworks[i])
+                }
             })
 
     }
