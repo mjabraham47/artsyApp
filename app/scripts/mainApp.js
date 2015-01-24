@@ -11,7 +11,6 @@ var app = angular.module('ArtsyApp.controllers', ['ionic', 'ionic.contrib.ui.tin
     }
   });
 
-    
 
   $scope.loginData = {};
 

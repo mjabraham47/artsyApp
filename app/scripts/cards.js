@@ -21,8 +21,11 @@ app
 
     var cardTypes;
     $scope.holdTheCards = [];
+    var likedCards = [];
 
-
+    var ref = new Firebase("https://swipe-artsy.firebaseio.com");
+    var authData = ref.getAuth();
+    console.log(authData);
 
     seeds.on('value', function(data) {
       $scope.cards = data.val();
@@ -60,14 +63,14 @@ app
 
 
     $scope.cardSwipedRight = function(index) {
-        $http.get('http://localhost:3000/related/' +$scope.cards[index].id)
+        likedCards.push($scope.cards[index].id);
+        $http.get('http://localhost:3000/related/' + authData.facebook.id +'/' +$scope.cards[index].id)
             .then(function(data){
                 return data.data
             }).then(function(data){
                 $scope.holdTheCards = data;
                 $scope.cards = $scope.holdTheCards._embedded.artworks.concat($scope.cards)
                 console.log($scope.cards);
-
             })
         console.log('Cards:', $scope.cards.length)
     }
