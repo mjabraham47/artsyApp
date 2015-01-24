@@ -1,7 +1,18 @@
 'use strict';
-var app = angular.module('ArtsyApp.controllers', ['ionic', 'ionic.contrib.ui.tinderCards'])
+var app = angular.module('ArtsyApp.controllers', ['ionic', 'ionic.contrib.ui.tinderCards', 'firebase'])
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
   // Form data for the login modal
+  var ref = new Firebase("https://swipe-artsy.firebaseio.com");
+  ref.authWithOAuthPopup("facebook", function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });
+
+
+
   $scope.loginData = {};
 
   // Create the login modal that we will use later
