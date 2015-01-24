@@ -14,14 +14,19 @@ app
 
     var seeds = new Firebase('https://swipe-artsy.firebaseio.com/seeds');
     var sync = $firebase(seeds);
-    $scope.seeds = sync.$asArray();
+    //var matches = $firebase(images);
+    //$scope.cards = sync.$asArray();
+    //$scope.matches = sync.$asArray();
+    $scope.addCards;
+
     var cardTypes;
-    $scope.cards = [];
     $scope.holdTheCards = [];
 
 
 
-
+    seeds.on('value', function(data) {
+      $scope.cards = data.val();
+    });
 
     $http.get('http://localhost:3000/artworks')
         .then(function(data){
@@ -55,8 +60,6 @@ app
 
 
     $scope.cardSwipedRight = function(index) {
-                console.log(index)
-
         $http.get('http://localhost:3000/related/' +$scope.cards[index].id)
             .then(function(data){
                 return data.data
