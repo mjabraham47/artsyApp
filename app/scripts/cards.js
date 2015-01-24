@@ -10,14 +10,18 @@ app
         }
     }
 })
-.controller('CardsCtrl', function($scope, $http) {
+.controller('CardsCtrl', function($scope, $http, $firebase) {
+
+    var seeds = new Firebase('https://swipe-artsy.firebaseio.com/seeds');
+    var sync = $firebase(seeds);
+    $scope.seeds = sync.$asArray();
     var cardTypes;
     $scope.cards = [];
     $scope.holdTheCards = [];
 
-       
 
-  
+
+
 
     $http.get('http://localhost:3000/artworks')
         .then(function(data){
@@ -49,7 +53,7 @@ app
       console.log('Cards:', $scope.cards.length)
     }
 
- 
+
     $scope.cardSwipedRight = function(index) {
                 console.log(index)
 
@@ -58,18 +62,18 @@ app
                 return data.data
             }).then(function(data){
                 $scope.holdTheCards = data;
-                $scope.cards = $scope.holdTheCards._embedded.artworks.concat($scope.cards) 
-                console.log($scope.cards); 
-                       
+                $scope.cards = $scope.holdTheCards._embedded.artworks.concat($scope.cards)
+                console.log($scope.cards);
+
             })
         console.log('Cards:', $scope.cards.length)
     }
- 
+
     $scope.cardDestroyed = function(index) {
         $scope.cards.splice(index, 1);
     }
 
- 
+
 
 
 })
