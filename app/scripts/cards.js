@@ -25,8 +25,8 @@ app
 
     var ref = new Firebase("https://swipe-artsy.firebaseio.com");
     var authData = ref.getAuth();
+    var image_path = ref.getAuth().toString() + '/images';
     console.log(authData);
-
 
     seeds.on('value', function(data) {
         var kamilla =  data;
@@ -35,10 +35,11 @@ app
         })
     });
 
-
     $scope.cardSwipedLeft = function(index) {
-        if($scope.cards.length < 3) {
-        $http.get('http://localhost:3000/artworks/more')
+        if($scope.cards.length = 0) {
+          ref.child(image_path).orderByKey().limitToFirst(10).on('value', function(cards) {
+            $scope.cards.push(cards);
+          })
         .then(function(data){
             return data.data
         }).then(function(data){
