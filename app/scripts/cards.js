@@ -17,34 +17,24 @@ app
     //var matches = $firebase(images);
     //$scope.cards = sync.$asArray();
     //$scope.matches = sync.$asArray();
-    $scope.addCards;
-
     var cardTypes;
+    $scope.addCards;
     $scope.holdTheCards = [];
-    var likedCards = [];
+    $scope.likedCards = [];
+    $scope.cards = [];
 
     var ref = new Firebase("https://swipe-artsy.firebaseio.com");
     var authData = ref.getAuth();
     console.log(authData);
 
+
     seeds.on('value', function(data) {
-      $scope.cards = data.val();
+        var kamilla =  data;
+        kamilla.forEach(function(child) {
+            $scope.cards.push(child.val());
+        })
     });
 
-    $http.get('http://localhost:3000/artworks')
-        .then(function(data){
-            return data.data
-        }).then(function(data){
-            cardTypes = data._embedded.artworks;
-            for(var i = 0; i < cardTypes.length; i++) {
-                $scope.addCards();
-            }
-        })
-
-    $scope.addCards = function() {
-        var newCard = cardTypes[Math.floor(Math.random() * cardTypes.length)];
-        $scope.cards.push(angular.extend({}, newCard));
-    }
 
     $scope.cardSwipedLeft = function(index) {
         if($scope.cards.length < 3) {
@@ -63,7 +53,7 @@ app
 
 
     $scope.cardSwipedRight = function(index) {
-        likedCards.push($scope.cards[index].id);
+        $scope.likedCards.push($scope.cards[index].id);
         $http.get('http://localhost:3000/related/' + authData.facebook.id +'/' +$scope.cards[index].id)
             .then(function(data){
                 return data.data
@@ -74,11 +64,6 @@ app
             })
         console.log('Cards:', $scope.cards.length)
     }
-
-    $scope.cardDestroyed = function(index) {
-        $scope.cards.splice(index, 1);
-    }
-
 
 
 

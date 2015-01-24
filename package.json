@@ -2,7 +2,9 @@
   "name": "ArtsyApp",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "underscore": "^1.7.0"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "glob": "~4.0.5",

@@ -31,6 +31,15 @@ angular.module('ArtsyApp', ['ionic', 'config', 'ArtsyApp.controllers', 'firebase
       controller: 'AppCtrl'
     })
 
+    .state('app.cards', {
+      url: '/cards',
+      views: {
+        'menuContent' :{
+          templateUrl: 'templates/cards.html',
+          controller: 'CardsCtrl'
+        }
+      }
+    })
     .state('app.search', {
       url: '/search',
       views: {
@@ -39,21 +48,11 @@ angular.module('ArtsyApp', ['ionic', 'config', 'ArtsyApp.controllers', 'firebase
         }
       }
     })
-
     .state('app.browse', {
       url: '/browse',
       views: {
         'menuContent' :{
           templateUrl: 'templates/browse.html'
-        }
-      }
-    })
-    .state('app.cards', {
-      url: '/cards',
-      views: {
-        'menuContent' :{
-          templateUrl: 'templates/cards.html',
-          controller: 'CardsCtrl'
         }
       }
     });
