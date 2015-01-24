@@ -14,29 +14,27 @@ app
 
     var seeds = new Firebase('https://swipe-artsy.firebaseio.com/seeds');
     var sync = $firebase(seeds);
-    $scope.seeds = sync.$asArray();
+    $scope.cards = sync.$asArray();
     var cardTypes;
-    $scope.cards = [];
     $scope.holdTheCards = [];
 
 
 
 
+    // $http.get('http://localhost:3000/artworks')
+    //     .then(function(data){
+    //         return data.data
+    //     }).then(function(data){
+    //         cardTypes = data._embedded.artworks;
+    //         for(var i = 0; i < cardTypes.length; i++) {
+    //             $scope.addCards();
+    //         }
+    //     })
 
-    $http.get('http://localhost:3000/artworks')
-        .then(function(data){
-            return data.data
-        }).then(function(data){
-            cardTypes = data._embedded.artworks;
-            for(var i = 0; i < cardTypes.length; i++) {
-                $scope.addCards();
-            }
-        })
-
-    $scope.addCards = function() {
-        var newCard = cardTypes[Math.floor(Math.random() * cardTypes.length)];
-        $scope.cards.push(angular.extend({}, newCard));
-    }
+    // $scope.addCards = function() {
+    //     var newCard = cardTypes[Math.floor(Math.random() * cardTypes.length)];
+    //     $scope.cards.push(angular.extend({}, newCard));
+    // }
 
     $scope.cardSwipedLeft = function(index) {
         if($scope.cards.length < 3) {

@@ -26,14 +26,14 @@
           </ion-header-bar>
 
           <td-cards>
-              <td-card id="td-card" ng-repeat="seed in seeds" on-destroy="cardDestroyed($index)"
+              <td-card id="td-card" ng-repeat="card in cards" on-destroy="cardDestroyed($index)"
               on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)">
                   <div class="title">
-                      <center>{{seed.title}}</center>
+                      <center>{{card.title}}</center>
                   </div>
                   <div class="image">
                       <div class="no-text overlayBox"><div class="noBox boxed">Nooooo</div></div>
-                      <img ng-src="{{seed._links.thumbnail.href}}">
+                      <img ng-src="{{card._links.thumbnail.href}}">
                       <div class="yes-text overlayBox"><div class="yesBox boxed" id="centerMe">Yaaaay</div></div>
                   </div>
               </td-card>
