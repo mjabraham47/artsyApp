@@ -47,8 +47,17 @@ angular.module('ArtsyApp', ['ionic', 'config', 'ArtsyApp.controllers', 'firebase
           templateUrl: 'templates/browse.html'
         }
       }
+    })
+    .state('app.cards', {
+      url: '/cards',
+      views: {
+        'menuContent' :{
+          templateUrl: 'templates/cards.html',
+          controller: 'CardsCtrl'
+        }
+      }
     });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/');
+  $urlRouterProvider.otherwise('/app/cards');
 });
 
