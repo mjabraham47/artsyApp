@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 app
 .directive('noScroll', function() {
     return {
@@ -8,7 +8,7 @@ app
                 e.preventDefault();
             });
         }
-    }
+    };
 })
 .controller('CardsCtrl', function($scope, $http, $firebase) {
 
@@ -25,8 +25,7 @@ app
 
     var ref = new Firebase("https://swipe-artsy.firebaseio.com");
     var authData = ref.getAuth();
-    var image_path = ref.getAuth().toString() + '/images';
-    console.log(authData);
+    var image_path = authData.facebook.id.toString() + '/images';
 
     seeds.on('value', function(data) {
         var kamilla =  data;
@@ -36,34 +35,44 @@ app
     });
 
     $scope.cardSwipedLeft = function(index) {
-        if($scope.cards.length = 0) {
-          ref.child(image_path).orderByKey().limitToFirst(10).on('value', function(cards) {
-            $scope.cards.push(cards);
-          })
-        .then(function(data){
-            return data.data
-        }).then(function(data){
-            cardTypes = data._embedded.artworks;
-            for(var i = 0; i < cardTypes.length; i++) {
-                $scope.addCards();
-            }
-        })
-      }
+        if($scope.cards.length < 50) {
+          ref.child(image_path).orderByKey().limitToFirst(10).on('value', function(data) {
+            data.forEach(function(card) {
+              $scope.cards.push(card.val());
+            });
+          });
+        }
       console.log('Cards:', $scope.cards.length)
     }
 
 
     $scope.cardSwipedRight = function(index) {
         $scope.likedCards.push($scope.cards[index].id);
+        if($scope.cards.length < 50) {
+          ref.child(image_path).orderByKey().limitToFirst(10).on('value', function(data) {
+            data.forEach(function(card) {
+              $scope.cards.push(card.val());
+              var delete_path = image_path + card.key().toString();
+              ref.child(delete_path).remove();
+            });
+          });
+        }
+
+
         $http.get('http://localhost:3000/related/' + authData.facebook.id +'/' +$scope.cards[index].id)
             .then(function(data){
-                return data.data
-            }).then(function(data){
-                $scope.holdTheCards = data;
-                $scope.cards = $scope.holdTheCards._embedded.artworks.concat($scope.cards)
-                console.log($scope.cards);
-            })
+                console.log(data);
+            });
+            // .then(function(data){
+            //     $scope.holdTheCards = data;
+            //     $scope.cards = $scope.holdTheCards._embedded.artworks.concat($scope.cards)
+            //     console.log($scope.cards);
+            // })
         console.log('Cards:', $scope.cards.length)
+    }
+
+    $scope.cardDestroyed = function(index) {
+      $scope.cards.splice(index,1);
     }
 
 
