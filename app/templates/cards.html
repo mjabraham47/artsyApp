@@ -9,8 +9,8 @@
           </ion-header-bar>
 
           <td-cards>
-              <td-card id="td-card" ng-repeat="card in cards" on-destroy='cardDestroyed($index)'
-              on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)">
+              <td-card id="td-card" ng-repeat="card in cards" on-destroy='cards.$remove(card)'
+              on-swipe-left="cardSwipedLeft(card)" on-swipe-right="cardSwipedRight(card)">
                   <div class="title">
                       <center>{{card.title}}</center>
                   </div>
