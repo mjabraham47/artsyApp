@@ -15,15 +15,14 @@ app
     var chill = new Firebase("https://swipe-artsy.firebaseio.com");
     var authData = chill.getAuth();
     var ref = new Firebase('https://swipe-artsy.firebaseio.com/' + authData.facebook.id.toString() + '/favorites');
-    
 
 //three way binding for user's favorites
 
     var faves_sync = $firebase(ref);
     var faves_array = faves_sync.$asArray();
-    faves_array.$loaded(function() {
         $scope.faves = faves_array;
+    faves_array.$loaded(function() {
+        console.log("faves done loading");
         console.log($scope.faves);
-    });
-
+    })
 })
