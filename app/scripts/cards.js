@@ -45,7 +45,7 @@ app
     var users_location = 'htts://swipe-artsy.firebaseio.com/' + authData.facebook.id.toString();
 
     var user_fb = new Firebase('htts://swipe-artsy.firebaseio.com/' + authData.facebook.id.toString());
-    user_fb.remove();
+    //user_fb.remove();
     //wait for firebase to load images, if there are none add seeds
     images_array.$loaded(function() {
       if ( $scope.cards.length === 0 ) {
