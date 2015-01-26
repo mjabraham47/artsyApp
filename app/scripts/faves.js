@@ -12,9 +12,10 @@ app
 })
 .controller('FavesCtrl', function($scope, $http, $firebase) {
 
-    var authData = ref.getAuth();
+    var chill = new Firebase("https://swipe-artsy.firebaseio.com");
+    var authData = chill.getAuth();
     var ref = new Firebase('https://swipe-artsy.firebaseio.com/' + authData.facebook.id.toString() + '/favorites');
-
+    
 
 //three way binding for user's favorites
 
@@ -22,6 +23,7 @@ app
     var faves_array = faves_sync.$asArray();
     faves_array.$loaded(function() {
         $scope.faves = faves_array;
+        console.log($scope.faves);
     });
 
 })

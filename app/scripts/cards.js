@@ -80,7 +80,6 @@ app
       console.log('Cards:', $scope.cards.length)
     }
 
-<<<<<<< HEAD
 //swipe right - add card to user's favorites array and look up similar works
     $scope.cardSwipedRight = function(card) {
       $scope.faves.$add(card);

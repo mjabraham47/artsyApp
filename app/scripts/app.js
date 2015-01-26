@@ -44,7 +44,8 @@ angular.module('ArtsyApp', ['ionic', 'config', 'ArtsyApp.controllers', 'firebase
       url: '/search',
       views: {
         'menuContent' :{
-          templateUrl: 'templates/search.html'
+          templateUrl: 'templates/search.html',
+          controller: 'FavesCtrl'
         }
       }
     })
