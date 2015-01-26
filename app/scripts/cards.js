@@ -17,7 +17,6 @@ app
     $scope.holdTheCards = [];
     $scope.likedCards = [];
 
-
     var ref = new Firebase("https://swipe-artsy.firebaseio.com");
     var seeds = new Firebase("https://swipe-artsy.firebaseio.com/seeds");
     var authData = ref.getAuth();
@@ -27,10 +26,16 @@ app
     var image_path = authData.facebook.id.toString() + '/images';
     var image_sync = $firebase(fb_images);
     var images_array = image_sync.$asArray();
-    //wait for images to load before adding to scope
-    images_array.$loaded(function() {
-      $scope.cards = images_array;
-    });
+    $scope.cards = images_array;
+
+//get artist whenever a new card is loaded
+    $scope.cards.on('value', function(cards) {
+        cards.forEach(function(card) {
+          $http.get('http://localhost:3000/artist/' + card.id, function(err, name) {
+            card.$set({artist_name : name});
+          })
+        });
+      })
 
 //three way binding for user's favorites
     var fb_faves = new Firebase('https://swipe-artsy.firebaseio.com/' + authData.facebook.id.toString() + '/favorites');
@@ -38,10 +43,9 @@ app
     var faves_array = faves_sync.$asArray();
     $scope.faves = faves_array;
 
+//set paths for firebase data stores
     var liked_path = authData.facebook.id.toString() + '/favorites';
     var seeds_path = authData.facebook.id.toString() + '/seeds';
-
-    //check if seeds exists if not copy
     var users_location = 'htts://swipe-artsy.firebaseio.com/' + authData.facebook.id.toString();
 
     //wait for firebase to load images, if there are none add seeds
@@ -65,23 +69,18 @@ app
 
 //swipe right - add card to user's favorites array and look up similar works
     $scope.cardSwipedRight = function(card) {
-      console.log(card);
-
-        $scope.faves.$add(card);
-        console.log('faves', $scope.faves);
+      $scope.faves.$add(card);
+      console.log('faves', $scope.faves);
 //call server to get similar artworks and add to users' images
         $http.get('http://localhost:3000/related/' + authData.facebook.id +'/' + card.id)
             .then(function(data){
-                console.log(data);
+                console.log('related', data.data._embedded);
             });
-
         console.log('Cards:', $scope.cards.length)
     }
 //remove card from users' images array when swiped
     $scope.cardDestroyed = function(card) {
-      console.log('removed', card);
       $scope.cards.$remove(card);
-
     }
 
 
