@@ -29,13 +29,9 @@ app
     $scope.cards = images_array;
 
 //get artist whenever a new card is loaded
-    $scope.cards.on('value', function(cards) {
-        cards.forEach(function(card) {
-          $http.get('http://localhost:3000/artist/' + card.id, function(err, name) {
-            card.$set({artist_name : name});
-          })
-        });
-      })
+    // $scope.cards.on('value', function(cards) {
+
+    //   })
 
 //three way binding for user's favorites
     var fb_faves = new Firebase('https://swipe-artsy.firebaseio.com/' + authData.facebook.id.toString() + '/favorites');
@@ -54,7 +50,11 @@ app
         console.log('seeds do not exist');
         seeds.once('value', function(data) {
           data.forEach(function(child) {
-            $scope.cards.$add(child.val());
+
+              $http.get('http://localhost:3000/artist/' + child.val().id, function(err, name) {
+              child.$set({artist_name : name});
+              $scope.cards.$add(child.val());
+            })
           });
         });
       } else {
@@ -71,6 +71,7 @@ app
     $scope.cardSwipedRight = function(card) {
       $scope.faves.$add(card);
       console.log('faves', $scope.faves);
+      console.log(card.id);
 //call server to get similar artworks and add to users' images
         $http.get('http://localhost:3000/related/' + authData.facebook.id +'/' + card.id)
             .then(function(data){
