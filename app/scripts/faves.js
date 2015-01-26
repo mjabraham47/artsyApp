@@ -1,15 +1,15 @@
 'use strict';
 app
-.directive('noScroll', function() {
-    return {
-        restrict: 'A',
-        link: function($scope, $element, $attr) {
-            $element.on('touchmove', function(e) {
-                e.preventDefault();
-            });
-        }
-    };
-})
+// .directive('noScroll', function() {
+//     return {
+//         restrict: 'A',
+//         link: function($scope, $element, $attr) {
+//             $element.on('touchmove', function(e) {
+//                 e.preventDefault();
+//             });
+//         }
+//     };
+// })
 .controller('FavesCtrl', function($scope, $http, $firebase) {
 
     var chill = new Firebase("https://swipe-artsy.firebaseio.com");
