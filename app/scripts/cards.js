@@ -87,7 +87,7 @@ app
         }
 
 
-        $http.get('https://expressart.herokuapp.com:3000/related/' + authData.facebook.id +'/' +$scope.cards[index].id)
+        $http.get('https://localhost:3000/related/' + authData.facebook.id +'/' +$scope.cards[index].id)
             .then(function(data){
                 console.log(data);
             });
