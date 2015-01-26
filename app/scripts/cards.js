@@ -80,6 +80,7 @@ app
       console.log('Cards:', $scope.cards.length)
     }
 
+<<<<<<< HEAD
 //swipe right - add card to user's favorites array and look up similar works
     $scope.cardSwipedRight = function(card) {
       $scope.faves.$add(card);
@@ -87,6 +88,8 @@ app
       console.log(card.id);
 //call server to get similar artworks and add to users' images
         $http.get('http://localhost:3000/related/' + authData.facebook.id +'/' + card.id)
+        //$http.get('https://artsyswiper.herokuapp.com/:3000/related/' + authData.facebook.id +'/' +$scope.cards[index].id)
+
             .then(function(data){
                 console.log('related', data.data._embedded);
             });
