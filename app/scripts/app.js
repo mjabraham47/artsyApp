@@ -40,11 +40,11 @@ angular.module('ArtsyApp', ['ionic', 'config', 'ArtsyApp.controllers', 'firebase
         }
       }
     })
-    .state('app.search', {
-      url: '/search',
+    .state('app.faves', {
+      url: '/faves',
       views: {
         'menuContent' :{
-          templateUrl: 'templates/search.html',
+          templateUrl: 'templates/faves.html',
           controller: 'FavesCtrl'
         }
       }
