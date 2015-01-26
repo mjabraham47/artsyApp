@@ -8,7 +8,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('ArtsyApp', ['ionic', 'config', 'ArtsyApp.controllers', 'firebase'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $timeout) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)

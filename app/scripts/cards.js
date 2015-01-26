@@ -10,7 +10,7 @@ app
         }
     };
 })
-.controller('CardsCtrl', function($scope, $http, $firebase) {
+.controller('CardsCtrl', function($scope, $http, $firebase, $timeout) {
 
     var seeds = new Firebase('https://swipe-artsy.firebaseio.com/seeds');
     var sync = $firebase(seeds);
@@ -31,8 +31,10 @@ app
         var kamilla =  data;
         kamilla.forEach(function(child) {
             $scope.cards.push(child.val());
+            $scope.$apply()
         })
-    });
+     })
+
 
     $scope.cardSwipedLeft = function(index) {
         if($scope.cards.length < 50) {
