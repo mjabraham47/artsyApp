@@ -45,7 +45,7 @@
     "ripple-emulator": "~0.9.23"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": "0.10.32"
   },
   "scripts": {
     "test": "grunt test"
