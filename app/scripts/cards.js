@@ -87,7 +87,7 @@ app
         }
 
 
-        $http.get('https://localhost:3000/related/' + authData.facebook.id +'/' +$scope.cards[index].id)
+        $http.get('https://artsyswiper.herokuapp.com/:3000/related/' + authData.facebook.id +'/' +$scope.cards[index].id)
             .then(function(data){
                 console.log(data);
             });
