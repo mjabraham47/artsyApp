@@ -1,1 +1,1 @@
-web: grunt serve
+web: node ./scripts/config.js
